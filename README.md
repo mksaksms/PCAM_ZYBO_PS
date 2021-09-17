@@ -32,3 +32,4 @@ petalinux-create -t apps -n uiotools
 petalinux-create -t apps -n videotest
 petalinux-create -t modules -n vdmadriver
 petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/design_1_wrapper.bit --u-boot --force
+ 
