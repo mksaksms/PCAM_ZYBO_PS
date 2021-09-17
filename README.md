@@ -31,7 +31,7 @@ petalinux-config -c rootfs
 petalinux-create -t apps -n uiotools
 petalinux-create -t apps -n videotest --template c --enable
 petalinux-create -t modules -n vdmadriver
-petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/design_1_wrapper.bit --u-boot --force
+petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/final.bit --u-boot --force
 
 To clean any software 
 petalinux-build -c uiotools -x cleanall 
