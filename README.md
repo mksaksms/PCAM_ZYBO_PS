@@ -33,8 +33,25 @@ petalinux-create -t apps -n videotest --template c --enable
 petalinux-create -t modules -n vdmadriver
 petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/design_1_wrapper.bit --u-boot --force
 
+To clean any software 
+petalinux-build -c uiotools -x cleanall 
+
+To test the software in Petalinux OS : 
+check /bin folder 
+
+cd bin 
+ls 
+
 
 
 Issues : 
 I found that if petalinux-create -t apps -n videotest --template c --enable template is not fixed then 
  
+ 
+ To take the picture : 
+ ./videotest /dev/video kawser
+ 
+ It will create a kawser.ppm in the /home/root/kawser.ppm
+ 
+ mount /dev/mmcblk0p1 /mnt/ 
+ cp /home/root/kawser.ppm /mnt
