@@ -10,7 +10,8 @@ Hardware Design : https://github.com/Catabit/Self-Driving-Car-DevBranch
 Modules : 
 vdmadriver 
 Application : 
-uiotools (prerequisite)
+uiotools
+initcamera(must needed)
 videotest (testing software)
 
 
@@ -55,3 +56,7 @@ I found that if petalinux-create -t apps -n videotest --template c --enable temp
  
  mount /dev/mmcblk0p1 /mnt/ 
  cp /home/root/kawser.ppm /mnt
+ 
+ I have added a sh script in the file named takepicture.sh 
+ 
+ 
