@@ -25,12 +25,19 @@ texinfo zlib1g-dev gcc-multilib build-essential libsdl1.2-dev libglib2.0-dev zli
 screen pax gzip
 ```
 petalinux-config --get-hw-description /home/kawser/Peta19/camera 
-petalinux-config -c rootfs
+
 petalinux-create -t apps -n uiotools
 petalinux-create -t apps -n videotest --template c --enable
 petalinux-create -t modules -n vdmadriver
+petalinux-config -c rootfs
+petalinux-build -c uiotools 
+petalinux-build -c videotest 
+petalinux-build -c vdmadriver
+
+petalinux-build 
 petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/final.bit --u-boot --force
 ```
+
 To clean any software 
 petalinux-build -c uiotools -x cleanall 
 
