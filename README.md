@@ -7,8 +7,8 @@ Petalinux and Vivado version 19.1
 Modules : 
 vdmadriver 
 Application : 
-uiotools (must needed - must be started before while booting
-initcamera(must needed - must be started on the while booting)
+uiotools (must needed - will be loaded automically while booting)
+initcamera(must needed - start before videotest app)
 videotest (testing software)
 
 
