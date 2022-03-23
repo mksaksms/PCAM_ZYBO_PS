@@ -27,13 +27,14 @@ screen pax gzip
 petalinux-config --get-hw-description /home/kawser/Peta19/camera 
 
 petalinux-create -t apps -n uiotools
+petalinux-create -t apps -n initcamera
 petalinux-create -t apps -n videotest --template c --enable
 petalinux-create -t modules -n vdmadriver
 petalinux-config -c rootfs
 petalinux-build -c uiotools 
 petalinux-build -c videotest 
 petalinux-build -c vdmadriver
-
+petalinux-build -c initcamera
 petalinux-build 
 petalinux-package --boot --format BIN --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/final.bit --u-boot --force
 ```
